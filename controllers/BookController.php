@@ -1,9 +1,11 @@
 <?php
 class BookController{
     public $bookModel;
+    public $authorModel;
     function __construct()
     {
         $this-> bookModel = new BookModel();
+        $this-> authorModel = new AuthorModel();
     }
     public function list() 
     {
@@ -18,7 +20,7 @@ class BookController{
     }
     public function addBook() 
     {
-        $authors = $this->bookModel->getAuthors();
+        $listAuthors = $this->authorModel->getAllAuthors();
         require_once PATH_VIEW . 'add.php';
     }
     public function addBookProcess()

@@ -61,7 +61,7 @@
                 <td><img src="<?=BASE_ASSETS_UPLOADS.$book['cover_image']?>" width="100"></td>
                 <td><?=$book['name'] ?></td>
                 <td><?=$book['publisher'] ?></td>
-                <td><a href="?action=deleteBook&id=<?=$book['id']?>">Xóa</a>|<a href="?action=editBook&id=<?=$book['id']?>"></a></td>
+                <td><a href="?action=deleteBook&id=<?=$book['id']?>">Xóa</a>|<a href="?action=editBook&id=<?=$book['id']?>">Sửa</a></td>
             </tr>
         <?php
         }

@@ -12,11 +12,11 @@
     <form action="?action=editBookProcess&id=" method="post" enctype="multipart/form-data">
         <div class="formControl">
             <label for="">Tên sản phẩm</label>
-            <input type="text" name="title" placeholder="Nhập tên sản phẩm">
+            <input type="text" name="title" value="<?= $editBook['title'] ?>">
         </div>
         <div class="formControl">
             <label for="">Ảnh bìa</label>
-            <input type="file" name="cover_image">
+            <input type="file" name="cover_image" value="<?= $editBook['cover_image'] ?>">
         </div>
         <div class="formControl">
             <label for="">Tác giả</label>
@@ -28,10 +28,10 @@
         </div>
         <div class="formControl">
             <label for="">Nhà sản xuất</label>
-            <input type="text" name="publisher">
+            <input type="text" name="publisher" value="<?= $editBook['publisher'] ?>">
         </div>
         <div class="formControl">
-            <input type="submit" name="btn_add" value="Thêm mới">
+            <input type="submit" name="btn_edit" value="Sửa">
         </div>
     </form>
 </body>
