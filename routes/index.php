@@ -9,4 +9,6 @@ match ($action) {
     'addBookProcess' => (new BookController)->addBookProcess(),
     'editBook'  => (new BookController)->editBook(),
     'editBookProcess' => (new BookController)->editBookProcess(),
+    'addAuthor' => (new BookController)->addAuthor(),
+    'addAuthorProcess' => (new BookController)->addAuthorProcess(),
 };

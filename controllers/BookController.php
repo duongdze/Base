@@ -33,6 +33,17 @@ class BookController{
         $this->bookModel->addBookProcess($title, $cover_image, $author, $publisher);
         header("location:" . BASE_URL);
     }
+    public function addAuthor()
+    {
+        $listAuthors = $this->authorModel->getAllAuthors();
+        require_once PATH_VIEW . 'addAuthor.php';
+    }
+    public function addAuthorProcess()
+    {
+        $name = $_POST['name'];
+        $this->authorModel->addAuthorProcess($name);
+        header("location:" . BASE_URL);
+    }
     public function editBook()
     {
         $id = $_GET['id'];
@@ -50,4 +61,5 @@ class BookController{
         $this->bookModel->editBookProcess($id, $title, $cover_image, $author, $publisher);
         header("location:" . BASE_URL);
     }
+    
 }

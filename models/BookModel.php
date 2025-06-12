@@ -43,7 +43,19 @@ class BookModel extends BaseModel
     }
     public function getBookById($id)
     {
-        $sql = "SELECT * FROM `books` INNER JOIN `author` ON `books`.`author_id` = `author`.`id` WHERE `books`.`id` = :id";
+        $sql = "SELECT 
+                    b.id, 
+                    b.title, 
+                    b.cover_image, 
+                    b.publisher,
+                    b.author_id,
+                    a.name
+                FROM 
+                    `books` AS b
+                INNER JOIN 
+                    `author` AS a ON b.`author_id` = a.`id` 
+                WHERE 
+                    b.`id` = :id";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':id', $id);
         $stmt->execute();

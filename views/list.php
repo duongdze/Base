@@ -42,6 +42,7 @@
 <body>
     <h1>Danh sach sach</h1>
     <a href="?action=addBook">Thêm sản phẩm</a>
+    <a href="?action=addAuthor">Thêm tác giả</a>
     <table>
         <tr>
             <th>ID</th>

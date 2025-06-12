@@ -6,4 +6,11 @@ class AuthorModel extends BaseModel{
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function addAuthorProcess($name) {
+        // Add your database logic here to insert a new author
+        // Example using PDO:
+        $stmt = $this->pdo->prepare("INSERT INTO authors (name) VALUES (:name)");
+        $stmt->bindParam(':name', $name);
+        $stmt->execute();
+    }
 }
