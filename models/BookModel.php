@@ -3,7 +3,16 @@ class BookModel extends BaseModel
 {
     public function getAll()
     {
-        $sql = "SELECT * FROM `books` INNER JOIN `author` ON `books`.`author_id` = `author`.`id`";
+        $sql = "SELECT 
+                    b.id, 
+                    b.title, 
+                    b.cover_image, 
+                    b.publisher, 
+                    a.name 
+                FROM 
+                    `books` AS b
+                INNER JOIN 
+                    `author` AS a ON b.`author_id` = a.`id`";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll();

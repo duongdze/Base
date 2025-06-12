@@ -12,18 +12,21 @@
     <form action="?action=editBookProcess&id=<?= $editBook['id'] ?>" method="post" enctype="multipart/form-data">
         <div class="formControl">
             <label for="">Tên sản phẩm</label>
-            <input type="text" name="title" value="<?= $editBook['title'] ?>">
+            <input type="text" name="title" value="<?= $editBook['title'] ?>" >
         </div>
         <div class="formControl">
             <label for="">Ảnh bìa</label>
-            <input type="file" name="cover_image" value="<?= $editBook['cover_image'] ?>">
+            <input type="file" name="cover_image">
         </div>
         <div class="formControl">
             <label for="">Tác giả</label>
             <select name="author">
-                <?php foreach ($authors as $author): ?>
+                <?php foreach ($authors as $author) {
+                ?>
                     <option value="<?= $author['id'] ?>"><?= $author['name'] ?></option>
-                <?php endforeach; ?>
+                <?php
+                }
+                ?>
             </select>
         </div>
         <div class="formControl">
