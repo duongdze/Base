@@ -35,7 +35,6 @@ class BookController{
     }
     public function addAuthor()
     {
-        $listAuthors = $this->authorModel->getAllAuthors();
         require_once PATH_VIEW . 'addAuthor.php';
     }
     public function addAuthorProcess()

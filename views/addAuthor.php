@@ -12,7 +12,7 @@
     <form action="?action=addAuthorProcess" method="post" enctype="multipart/form-data">
         <div class="formControl">
             <label for="">Tên tác giả</label>
-            <input type="text" name="title" placeholder="Nhập tên tác giả">
+            <input type="text" name="name" placeholder="Nhập tên tác giả">
         </div>
         <div class="formControl">
             <input type="submit" name="btn_add" value="Thêm mới">
