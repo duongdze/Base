@@ -9,7 +9,7 @@
 
 <body>
     <h1>Thêm danh sách</h1>
-    <form action="?action=editBookProcess&id=" method="post" enctype="multipart/form-data">
+    <form action="?action=editBookProcess&id=<?= $editBook['id'] ?>" method="post" enctype="multipart/form-data">
         <div class="formControl">
             <label for="">Tên sản phẩm</label>
             <input type="text" name="title" value="<?= $editBook['title'] ?>">

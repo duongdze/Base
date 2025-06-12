@@ -21,6 +21,7 @@
         <div class="formControl">
             <label for="">Tác giả</label>
             <select name="author">
+                <option value="">----</option>
                 <?php foreach ($listAuthors as $author): ?>
                     <option value="<?= $author['id'] ?>"><?= $author['name'] ?></option>
                 <?php endforeach; ?>
