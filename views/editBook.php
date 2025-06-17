@@ -11,24 +11,24 @@
     </style>
 </head>
 <body>
-    <h1>Thêm sách</h1>
-    <form action="?action=addBookProcess" method="POST">
+    <h1>Sửa sách</h1>
+    <form action="?action=editBookProcess&id=<?=$editBook['book_id']?>" method="POST">
         <div class="formControl">
             <label for="">Tên sách</label>
-            <input type="text" name="title">
+            <input type="text" name="title" value="<?=$editBook['title']?>">
         </div>
         <div class="formControl">
             <label for="">Ảnh sách</label>
-            <input type="file" name="cover_image">
+            <input type="file" name="cover_image" >
         </div>
         <div class="formControl">
             <label for="">tên tác giả</label>
             <select name="author_id" id="">
-                <option value="">--Chọn--</option>
+                <!-- <option value="">--Chọn--</option> -->
                 <?php
                 foreach($listAuthor as $author){
                 ?>
-                 <option value="<?=$author['author_id']?>"><?=$author['name']?></option>
+                 <option value="<?=$author['author_id']?>" <?php if($author['author_id']==$editBook['author_id']) echo "selected"?>><?=$author['name']?></option>
                 <?php
                 }
                 ?>
@@ -37,10 +37,10 @@
         </div>
         <div class="formControl">
             <label for="">Nhà xuất bản</label>
-            <input type="text" name="pulisher">
+            <input type="text" name="pulisher" value="<?=$editBook['author_id']?>">
         </div>
         <div class="formControl">
-            <input type="submit" name="btn_add" value="Thêm">
+            <input type="submit" name="btn_add" value="Sửa">
         </div>
     </form>
 </body>

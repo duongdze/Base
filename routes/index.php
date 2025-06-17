@@ -3,7 +3,9 @@
 $action = $_GET['action'] ?? '/';
 
 match ($action) {
-    '/'         => (new BookController)->list(),
+    '/'         => (new HomeController)->bookList(),
+
+    // Admin book
     'deleteBook' => (new BookController)->deleteBook(),
     'addBook'   => (new BookController)->addBook(),
     'addBookProcess' => (new BookController)->addBookProcess(),
@@ -11,4 +13,10 @@ match ($action) {
     'editBookProcess' => (new BookController)->editBookProcess(),
     'addAuthor' => (new BookController)->addAuthor(),
     'addAuthorProcess' => (new BookController)->addAuthorProcess(),
+    'adminList' => (new BookController)->list(),
+
+    // User
+    'login' => (new UserController)->login(),
+    'logout' => (new UserController)->logout(),
+    'loginProcess' => (new UserController)->loginProcess(),
 };
